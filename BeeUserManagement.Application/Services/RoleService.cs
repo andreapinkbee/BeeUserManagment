@@ -1,22 +1,20 @@
 ﻿
 using BeeUserManagement.Application.DTOs;
 using BeeUserManagement.Application.Interfaces;
-using BeeUserManagement.Infraestructure.Data;
 using BeeUserManagement.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace BeeUserManagement.Application.Services
 {
     public class RoleService : IRoleService
     {
-        private readonly BeeUserManagementDbContext _context;
+        private readonly IApplicationDbContext _context;
 
-        public RoleService(BeeUserManagementDbContext context)
+        public RoleService(IApplicationDbContext context)
         {
             _context = context;
         }
@@ -46,7 +44,7 @@ namespace BeeUserManagement.Application.Services
 
         public async Task<RoleDto> CreateAsync(RoleDto roleDto)
         {
-            var role = new Role   
+            var role = new Role
             {
                 Id = Guid.NewGuid(),
                 Name = roleDto.Name

@@ -6,7 +6,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BeeUserManagement.Domain\BeeUserManagement.Domain.csproj" />
-    <ProjectReference Include="..\BeeUserManagement.Infraestructure\BeeUserManagement.Infraestructure.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

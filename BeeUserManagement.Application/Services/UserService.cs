@@ -1,21 +1,19 @@
 ﻿using BeeUserManagement.Application.DTOs;
 using BeeUserManagement.Application.Interfaces;
 using BeeUserManagement.Domain.Entities;
-using BeeUserManagement.Infraestructure.Data;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace BeeUserManagement.Application.Services
 {
     public class UserService : IUserService
     {
-        private readonly BeeUserManagementDbContext _context;
+        private readonly IApplicationDbContext _context;
 
-        public UserService(BeeUserManagementDbContext context)
+        public UserService(IApplicationDbContext context)
         {
             _context = context;
         }
@@ -58,7 +56,7 @@ namespace BeeUserManagement.Application.Services
             var user = new User
             {
                 Id = Guid.NewGuid(),
-                FullName = userDto.FullName ,
+                FullName = userDto.FullName,
                 Email = userDto.Email,
                 RoleId = userDto.RoleId
             };

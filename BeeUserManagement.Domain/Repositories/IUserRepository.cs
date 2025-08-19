@@ -14,5 +14,6 @@ namespace BeeUserManagement.Domain.Repositories
         Task AddAsync(User user);
         Task UpdateAsync(User user);
         Task DeleteAsync(Guid id);
+        Task<User> GetByEmailAsync(string email);
     }
 }

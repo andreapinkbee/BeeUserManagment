@@ -2,6 +2,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BeeUserManagement.Domain\BeeUserManagement.Domain.csproj" />
+    <ProjectReference Include="..\BeeUserManagement.Application\BeeUserManagement.Application.csproj" />
   </ItemGroup>
 
   <ItemGroup>
